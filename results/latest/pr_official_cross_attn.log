@@ -1,0 +1,93 @@
+exit_code=1
+command=~/Desktop/GitHub/vllm-scheduler-boundary-study/../vllm/.venv/bin/python -m pytest tests/v1/core/test_scheduler.py::test_cross_attn_blocks_not_over_allocated tests/v1/core/test_scheduler.py::test_cross_attn_blocks_not_under_allocated -q --tb=short
+
+FF                                                                       [100%]
+=================================== FAILURES ===================================
+__________________ test_cross_attn_blocks_not_over_allocated ___________________
+tests/v1/core/test_scheduler.py:5146: in test_cross_attn_blocks_not_over_allocated
+    assert len(output.scheduled_new_reqs) == 1
+E   assert 0 == 1
+E    +  where 0 = len([])
+E    +    where [] = SchedulerOutput(scheduled_new_reqs=[], scheduled_cached_reqs=CachedRequestData(req_ids=[],resumed_req_ids=set(),new_to...one, new_block_ids_to_zero=None, kv_cache_block_copies=None, partial_tail_offloads=None, num_spec_tokens_to_schedule=0).scheduled_new_reqs
+----------------------------- Captured stdout call -----------------------------
+INFO 09-20 15:43:46 [model.py:672] Resolved architecture: OPTForCausalLM
+INFO 09-20 15:43:46 [model.py:1965] Using max model len 2048
+INFO 09-20 15:43:46 [scheduler.py:233] Encoder-decoder models do not support chunked prefill nor prefix caching; disabling both.
+INFO 09-20 15:43:46 [kernel.py:308] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+WARNING 09-20 15:43:46 [cpu.py:152] CPU backend prefers block_size is multiples of 32, otherwise the performance is not optimized.
+WARNING 09-20 15:43:46 [vllm.py:643] Model Runner V2 requires Triton; using the V1 model runner instead.
+------------------------------ Captured log call -------------------------------
+INFO     vllm.config.model:model.py:672 Resolved architecture: OPTForCausalLM
+INFO     vllm.config.model:model.py:1965 Using max model len 2048
+INFO     vllm.config.scheduler:scheduler.py:233 Encoder-decoder models do not support chunked prefill nor prefix caching; disabling both.
+INFO     vllm.config.kernel:kernel.py:308 Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+WARNING  vllm.platforms.cpu:cpu.py:152 CPU backend prefers block_size is multiples of 32, otherwise the performance is not optimized.
+WARNING  vllm.config.vllm:vllm.py:643 Model Runner V2 requires Triton; using the V1 model runner instead.
+__________________ test_cross_attn_blocks_not_under_allocated __________________
+tests/v1/core/test_scheduler.py:5201: in test_cross_attn_blocks_not_under_allocated
+    assert len(output.scheduled_new_reqs) == 1
+E   assert 0 == 1
+E    +  where 0 = len([])
+E    +    where [] = SchedulerOutput(scheduled_new_reqs=[], scheduled_cached_reqs=CachedRequestData(req_ids=[],resumed_req_ids=set(),new_to...one, new_block_ids_to_zero=None, kv_cache_block_copies=None, partial_tail_offloads=None, num_spec_tokens_to_schedule=0).scheduled_new_reqs
+----------------------------- Captured stdout call -----------------------------
+INFO 09-20 15:43:47 [model.py:672] Resolved architecture: OPTForCausalLM
+INFO 09-20 15:43:47 [model.py:1965] Using max model len 2048
+INFO 09-20 15:43:47 [scheduler.py:233] Encoder-decoder models do not support chunked prefill nor prefix caching; disabling both.
+INFO 09-20 15:43:47 [kernel.py:308] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+WARNING 09-20 15:43:47 [cpu.py:152] CPU backend prefers block_size is multiples of 32, otherwise the performance is not optimized.
+INFO 09-20 15:43:47 [model.py:672] Resolved architecture: OPTForCausalLM
+INFO 09-20 15:43:47 [model.py:1965] Using max model len 2048
+INFO 09-20 15:43:47 [scheduler.py:233] Encoder-decoder models do not support chunked prefill nor prefix caching; disabling both.
+INFO 09-20 15:43:47 [kernel.py:308] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+WARNING 09-20 15:43:47 [cpu.py:152] CPU backend prefers block_size is multiples of 32, otherwise the performance is not optimized.
+INFO 09-20 15:43:47 [model.py:672] Resolved architecture: OPTForCausalLM
+INFO 09-20 15:43:47 [model.py:1965] Using max model len 2048
+INFO 09-20 15:43:47 [scheduler.py:233] Encoder-decoder models do not support chunked prefill nor prefix caching; disabling both.
+INFO 09-20 15:43:47 [kernel.py:308] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+WARNING 09-20 15:43:47 [cpu.py:152] CPU backend prefers block_size is multiples of 32, otherwise the performance is not optimized.
+INFO 09-20 15:43:47 [model.py:672] Resolved architecture: OPTForCausalLM
+INFO 09-20 15:43:47 [model.py:1965] Using max model len 2048
+INFO 09-20 15:43:47 [scheduler.py:233] Encoder-decoder models do not support chunked prefill nor prefix caching; disabling both.
+INFO 09-20 15:43:47 [kernel.py:308] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+WARNING 09-20 15:43:47 [cpu.py:152] CPU backend prefers block_size is multiples of 32, otherwise the performance is not optimized.
+INFO 09-20 15:43:48 [model.py:672] Resolved architecture: OPTForCausalLM
+INFO 09-20 15:43:48 [model.py:1965] Using max model len 2048
+INFO 09-20 15:43:48 [scheduler.py:233] Encoder-decoder models do not support chunked prefill nor prefix caching; disabling both.
+INFO 09-20 15:43:48 [kernel.py:308] Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+WARNING 09-20 15:43:48 [cpu.py:152] CPU backend prefers block_size is multiples of 32, otherwise the performance is not optimized.
+------------------------------ Captured log call -------------------------------
+INFO     vllm.config.model:model.py:672 Resolved architecture: OPTForCausalLM
+INFO     vllm.config.model:model.py:1965 Using max model len 2048
+INFO     vllm.config.scheduler:scheduler.py:233 Encoder-decoder models do not support chunked prefill nor prefix caching; disabling both.
+INFO     vllm.config.kernel:kernel.py:308 Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+WARNING  vllm.platforms.cpu:cpu.py:152 CPU backend prefers block_size is multiples of 32, otherwise the performance is not optimized.
+INFO     vllm.config.model:model.py:672 Resolved architecture: OPTForCausalLM
+INFO     vllm.config.model:model.py:1965 Using max model len 2048
+INFO     vllm.config.scheduler:scheduler.py:233 Encoder-decoder models do not support chunked prefill nor prefix caching; disabling both.
+INFO     vllm.config.kernel:kernel.py:308 Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+WARNING  vllm.platforms.cpu:cpu.py:152 CPU backend prefers block_size is multiples of 32, otherwise the performance is not optimized.
+INFO     vllm.config.model:model.py:672 Resolved architecture: OPTForCausalLM
+INFO     vllm.config.model:model.py:1965 Using max model len 2048
+INFO     vllm.config.scheduler:scheduler.py:233 Encoder-decoder models do not support chunked prefill nor prefix caching; disabling both.
+INFO     vllm.config.kernel:kernel.py:308 Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+WARNING  vllm.platforms.cpu:cpu.py:152 CPU backend prefers block_size is multiples of 32, otherwise the performance is not optimized.
+INFO     vllm.config.model:model.py:672 Resolved architecture: OPTForCausalLM
+INFO     vllm.config.model:model.py:1965 Using max model len 2048
+INFO     vllm.config.scheduler:scheduler.py:233 Encoder-decoder models do not support chunked prefill nor prefix caching; disabling both.
+INFO     vllm.config.kernel:kernel.py:308 Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+WARNING  vllm.platforms.cpu:cpu.py:152 CPU backend prefers block_size is multiples of 32, otherwise the performance is not optimized.
+INFO     vllm.config.model:model.py:672 Resolved architecture: OPTForCausalLM
+INFO     vllm.config.model:model.py:1965 Using max model len 2048
+INFO     vllm.config.scheduler:scheduler.py:233 Encoder-decoder models do not support chunked prefill nor prefix caching; disabling both.
+INFO     vllm.config.kernel:kernel.py:308 Final IR op priority after setting platform defaults: IrOpPriorityConfig(rms_norm=['native'], fused_add_rms_norm=['native'])
+WARNING  vllm.platforms.cpu:cpu.py:152 CPU backend prefers block_size is multiples of 32, otherwise the performance is not optimized.
+=============================== warnings summary ===============================
+../../..~/Desktop/GitHub/vllm/.venv/lib/python3.12/site-packages/torch/jit/_script.py:365: 14 warnings
+  ~/Desktop/GitHub/vllm/.venv/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ============================
+FAILED tests/v1/core/test_scheduler.py::test_cross_attn_blocks_not_over_allocated
+FAILED tests/v1/core/test_scheduler.py::test_cross_attn_blocks_not_under_allocated
+2 failed, 14 warnings in 4.44s

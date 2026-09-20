@@ -1,0 +1,11 @@
+exit_code=0
+command=~/Desktop/GitHub/vllm-scheduler-boundary-study/../vllm/.venv/bin/python -m pytest ~/Desktop/GitHub/vllm-scheduler-boundary-study/tests/test_scheduling_contract.py -q --tb=short
+
+....                                                                     [100%]
+=============================== warnings summary ===============================
+../../..~/Desktop/GitHub/vllm/.venv/lib/python3.12/site-packages/torch/jit/_script.py:365: 14 warnings
+  ~/Desktop/GitHub/vllm/.venv/lib/python3.12/site-packages/torch/jit/_script.py:365: DeprecationWarning: `torch.jit.script_method` is deprecated. Please switch to `torch.compile` or `torch.export`.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+4 passed, 14 warnings in 2.45s
